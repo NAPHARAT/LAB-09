@@ -305,12 +305,119 @@ namespace GDIplus_1
 <img src="https://github.com/Desktop-Programming-Lab-2559/LAB-09/blob/master/imgs/lab9-8.png">
 </p> 
 
+Code
+
+```
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Drawing.Drawing2D;
+namespace GDIplus_1
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            Brush myBrush = new SolidBrush(Color.DarkGreen);
+            Pen mypen = new Pen(myBrush , 5);
+            //mypen.DashStyle = DashStyle.Dash;
+            //g.DrawRectangle(mypen, 10, 10, 200, 200);
+            //mypen.Width = 4;
+            //mypen.Color = Color.Pink;
+            g.DrawEllipse(mypen, 10, 10, 200, 200);
+            //bluepen.Dispose();
+
+            //Pen somePen = new Pen(Color.FromArgb(255, 120, 200));
+
+            mypen .Dispose();
+            myBrush.Dispose();
+
+            //Color col = Color.FromName("LightGreen");
+            //this.BackColor = col;
+        }
+    }
+}
+
+```
+
+ผลการทดลอง
+
+![](https://github.com/NAPHARAT/LAB-09/blob/master/imgs/6.JPG)
+
 * ใช้ Pen ร่วมกับ HatchBrush  เพื่อสร้างลายเส้นแบบต่างๆ
  <p align="center">
 <img src="https://github.com/Desktop-Programming-Lab-2559/LAB-09/blob/master/imgs/lab9-9.png">
 </p> 
  
 
+
+Code
+
+```
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Drawing.Drawing2D;
+namespace GDIplus_1
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            HatchBrush  myBrush = new HatchBrush (HatchStyle.DarkVertical,Color.Violet );
+            Pen mypen = new Pen(myBrush , 5);
+            //mypen.DashStyle = DashStyle.Dash;
+            //g.DrawRectangle(mypen, 10, 10, 200, 200);
+            //mypen.Width = 4;
+            //mypen.Color = Color.Pink;
+            g.DrawEllipse(mypen, 10, 10, 200, 200);
+            //bluepen.Dispose();
+
+            //Pen somePen = new Pen(Color.FromArgb(255, 120, 200));
+
+            mypen .Dispose();
+            myBrush.Dispose();
+
+            //Color col = Color.FromName("LightGreen");
+            //this.BackColor = col;
+        }
+    }
+}
+
+```
+
+ผลการทดลอง
+
+
+![](https://github.com/NAPHARAT/LAB-09/blob/master/imgs/7.JPG)
 ##คำถาม/แบบฝึกหัดท้ายการทดลอง
 * ให้เปลี่ยน Color และ HatchStyle เป็นแบบต่างๆ เพื่อดูความเปลี่ยนแปลง 
  * เลือกรูปแบจาก [MSDN: HatchStyle Enumeration](https://msdn.microsoft.com/en-us/library/system.drawing.drawing2d.hatchstyle(v=vs.110).aspx) แล้ววาดภาพมาส่งอย่างน้อย 6 รูปแบบ 
+ 
+ 
+ 
+ 
