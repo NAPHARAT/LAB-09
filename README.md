@@ -419,5 +419,9 @@ namespace GDIplus_1
  * เลือกรูปแบจาก [MSDN: HatchStyle Enumeration](https://msdn.microsoft.com/en-us/library/system.drawing.drawing2d.hatchstyle(v=vs.110).aspx) แล้ววาดภาพมาส่งอย่างน้อย 6 รูปแบบ 
  
  
- 
- 
+![](https://github.com/NAPHARAT/LAB-09/blob/master/imgs/8.JPG) 
+![](https://github.com/NAPHARAT/LAB-09/blob/master/imgs/9.JPG) 
+![](https://github.com/NAPHARAT/LAB-09/blob/master/imgs/10.JPG)
+![](https://github.com/NAPHARAT/LAB-09/blob/master/imgs/11.JPG)
+![](https://github.com/NAPHARAT/LAB-09/blob/master/imgs/12.JPG)
+![](https://github.com/NAPHARAT/LAB-09/blob/master/imgs/13.JPG)
