@@ -91,7 +91,7 @@ namespace GDIplus_1
 ผลการทดลอง
 
 
-![]()
+![](https://github.com/NAPHARAT/LAB-09/blob/master/imgs/1.JPG)
 
 ###2.5.	การทดลองย่อย 2  การใช้สี
 ####2.5.1.	การใช้สีโดยการผสมค่าสี
@@ -101,22 +101,205 @@ namespace GDIplus_1
 <img src="https://github.com/Desktop-Programming-Lab-2559/LAB-09/blob/master/imgs/lab9-4.png">
 </p> 
  
+Code
+```
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Drawing.Drawing2D;
+namespace GDIplus_1
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            Pen bluepen = new Pen(Color.Blue, 2);
+            g.DrawRectangle(bluepen, 10, 10, 100, 100);
+            bluepen.Dispose();
+
+            Pen somePen = new Pen(Color.FromArgb(255, 120, 200));
+            g.DrawEllipse(somePen, 20, 20, 200, 200);
+            somePen.Dispose();
+        }
+    }
+}
+
+```
+
+
+ผลการทดลอง
+
+![](https://github.com/NAPHARAT/LAB-09/blob/master/imgs/2.JPG)
 ####2.5.2.	โดยการใช้ methode FromName 
 * เพิ่ม Code ต่อไปนี้ลงในฟังก์ชัน private void Form1_Paint(object sender, PaintEventArgs e) แล้วทดลอง Run โปรแกรม
  <p align="center">
 <img src="https://github.com/Desktop-Programming-Lab-2559/LAB-09/blob/master/imgs/lab9-5.png">
 </p> 
 
+
+Code
+
+```
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Drawing.Drawing2D;
+namespace GDIplus_1
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            Pen bluepen = new Pen(Color.Blue, 2);
+            g.DrawRectangle(bluepen, 10, 10, 100, 100);
+            bluepen.Dispose();
+
+            Pen somePen = new Pen(Color.FromArgb(255, 120, 200));
+            g.DrawEllipse(somePen, 20, 20, 200, 200);
+            somePen.Dispose();
+
+            Color col = Color.FromName("LightGreen");
+            this.BackColor = col;
+        }
+    }
+}
+
+```
+
+ผลการทดลอง
+
+![](https://github.com/NAPHARAT/LAB-09/blob/master/imgs/3.JPG)
 ####2.5.3. การทดลองย่อย 3  -- การใช้ปากกา
 * การทดลองเปลี่ยนขนาดและสีของปากกา โดยใช้ properties Width และ Color
 <p align="center">
 <img src="https://github.com/Desktop-Programming-Lab-2559/LAB-09/blob/master/imgs/lab9-6.png">
 </p> 
+
+
+Code
+```
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Drawing.Drawing2D;
+namespace GDIplus_1
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            Pen mypen = new Pen(Color.Blue, 1);
+           
+            mypen.Width = 4;
+            mypen.Color = Color.Pink;
+            g.DrawRectangle(mypen, 10, 10, 200, 200);
+            //bluepen.Dispose();
+
+            //Pen somePen = new Pen(Color.FromArgb(255, 120, 200));
+            //g.DrawEllipse(somePen, 20, 20, 200, 200);
+            //somePen.Dispose();
+
+            //Color col = Color.FromName("LightGreen");
+            //this.BackColor = col;
+        }
+    }
+}
+
+
+```
+
+ผลการทดลอง
+
+![](https://github.com/NAPHARAT/LAB-09/blob/master/imgs/4.JPG)
 * เปลี่ยนชนิดของปากกาเป็นเส้นประ
 <p align="center">
 <img src="https://github.com/Desktop-Programming-Lab-2559/LAB-09/blob/master/imgs/lab9-7.png">
 </p> 
 
+Code
+
+```
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Drawing.Drawing2D;
+namespace GDIplus_1
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            Pen mypen = new Pen(Color.Blue, 1);
+            mypen.DashStyle = DashStyle.Dash;
+            g.DrawRectangle(mypen, 10, 10, 200, 200);
+            mypen.Width = 4;
+            mypen.Color = Color.Pink;
+            g.DrawEllipse(mypen, 10, 10, 200, 200);
+            //bluepen.Dispose();
+
+            //Pen somePen = new Pen(Color.FromArgb(255, 120, 200));
+
+            //somePen.Dispose();
+
+            //Color col = Color.FromName("LightGreen");
+            //this.BackColor = col;
+        }
+    }
+}
+
+```
+
+ผลการทดลอง
+
+![](https://github.com/NAPHARAT/LAB-09/blob/master/imgs/5.JPG)
 * ใช้ Pen ร่วมกับ Brush  
  <p align="center">
 <img src="https://github.com/Desktop-Programming-Lab-2559/LAB-09/blob/master/imgs/lab9-8.png">
